@@ -13,5 +13,14 @@ namespace App2
         {
             InitializeComponent();
         }
+
+        int count_click = 0;
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            count_click++;
+            txtResult.Text = count_click.ToString();
+            DisplayAlert("tytul", count_click.ToString(), "OK");
+        }
     }
 }

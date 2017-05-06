@@ -4,8 +4,9 @@
              xmlns:local="clr-namespace:App2"
              x:Class="App2.MainPage">
 
-	<Label Text="Welcome to Xamarin Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
+    <StackLayout>
+        <Button Clicked="Button_Clicked" Text="Klikaj"/>
+        <Label x:Name="txtResult" Text="0"/>
+    </StackLayout>
 
 </ContentPage>
