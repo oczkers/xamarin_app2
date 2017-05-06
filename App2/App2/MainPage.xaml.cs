@@ -12,6 +12,7 @@ namespace App2
         public MainPage()
         {
             InitializeComponent();
+            device.Text = Device.RuntimePlatform;
         }
 
         int count_click = 0;
@@ -26,13 +27,15 @@ namespace App2
             }
             else
             {
-                /*
-                Device.OnPlatform(
-                    Android: image.Source = "penis.png";
-                    
-                );
-                */
-                image.Source = "penis.png";  // works only on android
+                switch (Device.RuntimePlatform)
+                {
+                    case "Android":
+                        image.Source = "penis.png";
+                        break;
+                    case "Windows":
+                        image.Source = "Assets\\penis.png";
+                        break;
+                }
             }
         }
     }
