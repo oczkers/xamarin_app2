@@ -5,9 +5,6 @@
              x:Class="App2.MainPage">
 
     <StackLayout>
-        <Button Clicked="Button_Clicked" Text="Klikaj"/>
-        <Label x:Name="txtResult" Text="0"/>
-        <Label x:Name="device"/>
         <Image x:Name="image" />
     </StackLayout>
 
