@@ -3,7 +3,7 @@
 //using System.Linq;
 //using System.Text;
 //using System.Threading.Tasks;
-using App2.models;
+using App2.models;  // core
 using Xamarin.Forms;
 //using System.Net.Http;
 
