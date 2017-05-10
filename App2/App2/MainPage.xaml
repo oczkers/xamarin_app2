@@ -3,21 +3,33 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:App2"
              x:Class="App2.MainPage"
-             Title="App2">
+             Title="Meteo">
     <MasterDetailPage.ToolbarItems>
-        <ToolbarItem Text="Share" />
+        <ToolbarItem Icon="ic_settings_white_24dp.png" Priority="1" />
+        <ToolbarItem Icon="ic_refresh_white_24dp.png" Priority="0" />  <!-- TODO: animation -->
     </MasterDetailPage.ToolbarItems>
 
     
     <MasterDetailPage.Master>
         <ContentPage Title="Master">
+            <StackLayout>
+                <StackLayout VerticalOptions="StartAndExpand">
+                    <ListView x:Name="menu" SeparatorVisibility="None" />
+                </StackLayout>
+                <StackLayout VerticalOptions="End">
+                    <ListView x:Name="menu_footer" SeparatorVisibility="None" />
+                </StackLayout>
+            </StackLayout>
         </ContentPage>
     </MasterDetailPage.Master>
 
 
     <MasterDetailPage.Detail>
         <ContentPage>
-            <Image x:Name="image" />
+            <StackLayout>
+                <Image x:Name="image" />
+                <Label x:Name="label" />
+            </StackLayout>
         </ContentPage>
     </MasterDetailPage.Detail>
 

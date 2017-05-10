@@ -10,7 +10,7 @@ namespace App2.models
 {
     class core
     {
-        public static string LoadImage()
+        public static string LoadImage(int row, int col, string lang="en")
         {
             requests r = new requests();
             string rc = r.get("http://www.meteo.pl/meteorogram_um_js.php");
