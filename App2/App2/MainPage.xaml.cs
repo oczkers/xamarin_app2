@@ -11,8 +11,9 @@ namespace App2
 {
     public partial class MainPage : MasterDetailPage
     {
-        int row = 466;
-        int col = 232;
+        Core core = new Core();
+        int row = 406;
+        int col = 250;
 
         public MainPage()
         {
@@ -22,6 +23,7 @@ namespace App2
             //IsPresented = true;
             menu.ItemsSource = new string[]  // TODO: dynamic list created by user
             {
+                "Białystok",
                 "Warszawa",
                 "Kraków",
             };
@@ -33,17 +35,24 @@ namespace App2
 
         void OnItemSelected (object sender, SelectedItemChangedEventArgs e)
         {
-            IsPresented = false;
+            IsPresented = false;  // hide master page
             // TODO: drop this switch, object based
             switch (e.SelectedItem.ToString())
             {
+                case "Białystok":
+                    row = 379;
+                    col = 285;
+                    break;
                 case "Warszawa":
-                    core.LoadImage(row, col);
+                    row = 406;
+                    col = 250;
                     break;
                 case "Kraków":
-                    label.Text = "Kraków";
+                    row = 466;
+                    col = 232;
                     break;
             }
+            image.Source = core.LoadImage(row, col);
             //Detail = new NavigationPage()
         }
     }
