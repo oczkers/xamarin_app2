@@ -1,11 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:App2"
-             x:Class="App2.MainPage">
+             x:Class="App2.MainPage"
+             Title="App2">
 
-    <StackLayout>
-        <Image x:Name="image" />
-    </StackLayout>
+    
+    <MasterDetailPage.Master>
+        <ContentPage Title="Master">
+        </ContentPage>
+    </MasterDetailPage.Master>
 
-</ContentPage>
+
+    <MasterDetailPage.Detail>
+        <ContentPage>
+            <StackLayout>
+                <Image x:Name="image" />
+            </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Detail>
+
+</MasterDetailPage>

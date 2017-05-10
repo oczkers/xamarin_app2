@@ -9,12 +9,13 @@ using Xamarin.Forms;
 
 namespace App2
 {
-    public partial class MainPage : ContentPage
+    public partial class MainPage : MasterDetailPage
     {
         public MainPage()
         {
             InitializeComponent();
             image.Source = core.LoadImage();
+            IsPresented = true;
         }
     }
 }
