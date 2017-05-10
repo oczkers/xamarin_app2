@@ -4,6 +4,9 @@
              xmlns:local="clr-namespace:App2"
              x:Class="App2.MainPage"
              Title="App2">
+    <MasterDetailPage.ToolbarItems>
+        <ToolbarItem Text="Share" />
+    </MasterDetailPage.ToolbarItems>
 
     
     <MasterDetailPage.Master>
@@ -14,9 +17,7 @@
 
     <MasterDetailPage.Detail>
         <ContentPage>
-            <StackLayout>
-                <Image x:Name="image" />
-            </StackLayout>
+            <Image x:Name="image" />
         </ContentPage>
     </MasterDetailPage.Detail>
 
