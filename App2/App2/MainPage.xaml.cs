@@ -25,7 +25,6 @@ namespace App2
             menu.ItemSelected += MenuItemSelected;
             menu_footer.ItemTapped += MenuFooterItemTapped;
 
-            image.Source = core.LoadImage(row, col);
             menu.ItemsSource = new string[]  // TODO: dynamic list created by user
             {
                 "Białystok",
@@ -36,6 +35,16 @@ namespace App2
             {
                 "Licencje",
             };
+
+            Refresh();
+        }
+
+        private async void Refresh()
+        {
+            image.Source = null;
+            activity.IsRunning = true;
+            image.Source = await core.LoadImage(row, col);
+            activity.IsRunning = false;
         }
 
         private void SettingsClicked(object sender, EventArgs e)
@@ -52,7 +61,7 @@ namespace App2
 
         private void RefreshClicked(object sender, EventArgs e)
         {
-            image.Source = core.LoadImage(row, col);
+            Refresh();
             debug.Text = "reloaded";
         }
 
@@ -76,7 +85,8 @@ namespace App2
                     break;
             }
             debug.Text = String.Format("row: {0}\n col: {1}", row, col);
-            image.Source = core.LoadImage(row, col);
+            Refresh();
+            //image.Source = core.LoadImage(row, col);
             //Detail = new NavigationPage()
         }
 

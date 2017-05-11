@@ -22,9 +22,10 @@
 
     <MasterDetailPage.Detail>
         <ContentPage>
-            <StackLayout>
+            <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
                 <Image x:Name="image" />
                 <Label x:Name="debug" />
+                <ActivityIndicator x:Name="activity" />
             </StackLayout>
         </ContentPage>
     </MasterDetailPage.Detail>

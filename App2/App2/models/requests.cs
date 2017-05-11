@@ -2,7 +2,7 @@
 //using System.Collections.Generic;
 //using System.Linq;
 using System.Text;  // Encoding
-//using System.Threading.Tasks;
+using System.Threading.Tasks;
 using System.Net.Http;
 
 
@@ -18,11 +18,12 @@ namespace App2.models
             //this.DefaultRequestHeaders.Add("Accept-Charset", "utf-8");
         }
 
-        public string get(string url)
+        public async Task<string> get(string url)
         {
             // string rc = await r.GetStringAsync("http://www.meteo.pl/meteorogram_um_js.php");  // works only with utf-8 response
-            var buffer = this.GetAsync(url).Result.Content.ReadAsByteArrayAsync().Result;  // TODO: exceptions
-            return Encoding.UTF8.GetString(buffer, 0, buffer.Length);
+            var buffer = await this.GetAsync(url);
+            var rc = await buffer.Content.ReadAsByteArrayAsync();  // TODO: exceptions
+            return Encoding.UTF8.GetString(rc, 0, rc.Length);
         }
     }
 }
