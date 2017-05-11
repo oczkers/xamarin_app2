@@ -1,4 +1,4 @@
-﻿//using System;
+﻿using System;  // String
 //using System.Collections.Generic;
 //using System.Linq;
 //using System.Text;
@@ -19,7 +19,7 @@ namespace App2
         {
             InitializeComponent();
             image.Source = core.LoadImage(row, col);
-            menu.ItemSelected += OnItemSelected;
+            menu.ItemSelected += OnMenuItemSelected;
             //IsPresented = true;
             menu.ItemsSource = new string[]  // TODO: dynamic list created by user
             {
@@ -33,7 +33,7 @@ namespace App2
             };
         }
 
-        void OnItemSelected (object sender, SelectedItemChangedEventArgs e)
+        private void OnMenuItemSelected (object sender, SelectedItemChangedEventArgs e)
         {
             IsPresented = false;  // hide master page
             // TODO: drop this switch, object based
@@ -52,8 +52,15 @@ namespace App2
                     col = 232;
                     break;
             }
+            debug.Text = String.Format("row: {0}\n col: {1}", row, col);
             image.Source = core.LoadImage(row, col);
             //Detail = new NavigationPage()
+        }
+
+        private void Refresh_Clicked(object sender, System.EventArgs e)
+        {
+            image.Source = core.LoadImage(row, col);
+            debug.Text = "reloaded";
         }
     }
 }
