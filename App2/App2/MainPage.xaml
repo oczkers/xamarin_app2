@@ -5,8 +5,8 @@
              x:Class="App2.MainPage"
              Title="Meteo">
     <MasterDetailPage.ToolbarItems>
-        <ToolbarItem Icon="ic_settings_white_24dp.png" Priority="1" />
-        <ToolbarItem Icon="ic_refresh_white_24dp.png" Priority="0" Clicked="Refresh_Clicked"/>  <!-- TODO: animation -->
+        <ToolbarItem Icon="ic_settings_white_24dp.png" Priority="1" x:Name="toolbar_settings" />
+        <ToolbarItem Icon="ic_refresh_white_24dp.png" Priority="0" x:Name="toolbar_refresh" />  <!-- TODO: animation -->
     </MasterDetailPage.ToolbarItems>
 
     

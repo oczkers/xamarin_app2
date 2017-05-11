@@ -7,6 +7,7 @@ using App2.models;  // core
 using Xamarin.Forms;
 //using System.Net.Http;
 
+
 namespace App2
 {
     public partial class MainPage : MasterDetailPage
@@ -18,9 +19,13 @@ namespace App2
         public MainPage()
         {
             InitializeComponent();
+            // bind buttons
+            toolbar_settings.Clicked += SettingsClicked;
+            toolbar_refresh.Clicked += RefreshClicked;
+            menu.ItemSelected += MenuItemSelected;
+            menu_footer.ItemTapped += MenuFooterItemTapped;
+
             image.Source = core.LoadImage(row, col);
-            menu.ItemSelected += OnMenuItemSelected;
-            //IsPresented = true;
             menu.ItemsSource = new string[]  // TODO: dynamic list created by user
             {
                 "Białystok",
@@ -33,7 +38,25 @@ namespace App2
             };
         }
 
-        private void OnMenuItemSelected (object sender, SelectedItemChangedEventArgs e)
+        private void SettingsClicked(object sender, EventArgs e)
+        {
+            Detail.Navigation.PushAsync(new views.settings());
+            IsPresented = false;  // just to make sure
+        }
+
+        private void LicensesClicked(object sender, EventArgs e)
+        {
+            Detail.Navigation.PushAsync(new views.licenses());
+            //IsPresented = false;  // just to make sure
+        }
+
+        private void RefreshClicked(object sender, EventArgs e)
+        {
+            image.Source = core.LoadImage(row, col);
+            debug.Text = "reloaded";
+        }
+
+        private void MenuItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             IsPresented = false;  // hide master page
             // TODO: drop this switch, object based
@@ -57,10 +80,11 @@ namespace App2
             //Detail = new NavigationPage()
         }
 
-        private void Refresh_Clicked(object sender, System.EventArgs e)
+        private void MenuFooterItemTapped(object sender, ItemTappedEventArgs e)
         {
-            image.Source = core.LoadImage(row, col);
-            debug.Text = "reloaded";
+            Detail.Navigation.PushAsync(new views.licenses());
+            IsPresented = false;
+            menu_footer.SelectedItem = null;
         }
     }
 }

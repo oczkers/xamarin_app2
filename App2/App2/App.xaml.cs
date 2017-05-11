@@ -3,8 +3,10 @@
 //using System.Linq;
 //using System.Text;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 
+[assembly: XamlCompilation(XamlCompilationOptions.Compile)]  // compile xaml views on build instead of run-time
 namespace App2
 {
     public partial class App : Application
