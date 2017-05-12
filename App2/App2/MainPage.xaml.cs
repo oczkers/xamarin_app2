@@ -33,6 +33,7 @@ namespace App2
             };
             menu_footer.ItemsSource = new string[]
             {
+                "Legenda",
                 "Licencje",
             };
             menu.SelectedItem = "Warszawa";
@@ -97,7 +98,15 @@ namespace App2
 
         private async void MenuFooterItemTapped(object sender, ItemTappedEventArgs e)
         {
-            await Detail.Navigation.PushAsync(new views.licenses());
+            switch (e.Item.ToString())
+            {
+                case "Legenda":
+                    await Detail.Navigation.PushAsync(new views.legend());
+                    break;
+                case "Licencje":
+                    await Detail.Navigation.PushAsync(new views.licenses());
+                    break;
+            }
             IsPresented = false;
             menu_footer.SelectedItem = null;
         }
