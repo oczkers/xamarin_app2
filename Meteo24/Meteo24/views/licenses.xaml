@@ -4,9 +4,16 @@
              x:Class="Meteo24.views.licenses"
              Title="Licencje">
 
-    <StackLayout>
-        <Label Text="Źródło pogody" FontAttributes="Bold" FontSize="Large" />
-        <Label Text="Prognoza została udostępniona nieodpłatnie przez serwis meteo.pl prowadzony przez ICM, Uniwersytet Warszawski. Wyniki uzyskano przy użyciu oprogramowania Met Office. Material produced using Met Office Software." />
+    <StackLayout Spacing="50" Margin="10,50">  <!-- TODO: relative -->
+        <StackLayout>
+            <Label Text="Źródło pogody" FontAttributes="Bold" FontSize="Large" x:Name="label_meteo_title" />
+            <Label Text="Prognoza została udostępniona nieodpłatnie przez serwis meteo.pl prowadzony przez ICM, Uniwersytet Warszawski. Wyniki uzyskano przy użyciu oprogramowania Met Office. Material produced using Met Office Software." x:Name="label_meteo" />
+        </StackLayout>
+        <StackLayout>
+            <Label Text="Licencja programu" FontAttributes="Bold" FontSize="Large" x:Name="label_gplv3_title" />
+            <Label Text="Aplikacja ma w pełni otwarty kod i wydana jest na licencji GNU General Public License v3 (GPLv3)." x:Name="label_gplv3" />
+            <Label Text="Źródła dostępne na githubie." x:Name="label_github" />
+        </StackLayout>
     </StackLayout>
 
 </ContentPage>
