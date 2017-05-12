@@ -5,7 +5,7 @@
              Title="Licencje">
 
     <StackLayout>
-        <Label Text="Źródło pogody" FontAttributes="Bold"/>
+        <Label Text="Źródło pogody" FontAttributes="Bold" FontSize="Large" />
         <Label Text="Prognoza została udostępniona nieodpłatnie przez serwis meteo.pl prowadzony przez ICM, Uniwersytet Warszawski. Wyniki uzyskano przy użyciu oprogramowania Met Office. Material produced using Met Office Software." />
     </StackLayout>
 

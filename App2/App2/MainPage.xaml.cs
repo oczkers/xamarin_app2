@@ -35,6 +35,7 @@ namespace App2
             {
                 "Licencje",
             };
+            menu.SelectedItem = "Warszawa";
 
             Refresh();
         }
@@ -43,19 +44,21 @@ namespace App2
         {
             image.Source = null;
             activity.IsRunning = true;
-            image.Source = await core.LoadImage(row, col);
+            string rc = await core.LoadImage(row, col);
+            image.Source = rc;
+            debug.Text = rc;
             activity.IsRunning = false;
         }
 
-        private void SettingsClicked(object sender, EventArgs e)
+        private async void SettingsClicked(object sender, EventArgs e)
         {
-            Detail.Navigation.PushAsync(new views.settings());
+            await Detail.Navigation.PushAsync(new views.settings());
             IsPresented = false;  // just to make sure
         }
 
-        private void LicensesClicked(object sender, EventArgs e)
+        private async void LicensesClicked(object sender, EventArgs e)
         {
-            Detail.Navigation.PushAsync(new views.licenses());
+            await Detail.Navigation.PushAsync(new views.licenses());
             //IsPresented = false;  // just to make sure
         }
 
@@ -90,9 +93,9 @@ namespace App2
             //Detail = new NavigationPage()
         }
 
-        private void MenuFooterItemTapped(object sender, ItemTappedEventArgs e)
+        private async void MenuFooterItemTapped(object sender, ItemTappedEventArgs e)
         {
-            Detail.Navigation.PushAsync(new views.licenses());
+            await Detail.Navigation.PushAsync(new views.licenses());
             IsPresented = false;
             menu_footer.SelectedItem = null;
         }

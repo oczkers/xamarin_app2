@@ -3,7 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:App2"
              x:Class="App2.MainPage"
+             MasterBehavior="Popover"
              Title="Meteo">
+
     <MasterDetailPage.ToolbarItems>
         <ToolbarItem Icon="ic_settings_white_24dp.png" Priority="1" x:Name="toolbar_settings" />
         <ToolbarItem Icon="ic_refresh_white_24dp.png" Priority="0" x:Name="toolbar_refresh" />  <!-- TODO: animation -->
