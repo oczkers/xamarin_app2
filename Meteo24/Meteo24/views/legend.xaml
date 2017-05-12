@@ -6,6 +6,7 @@
 
     <Grid>
         <Image Source="http://www.meteo.pl/um/metco/leg_um_pl_cbase_256.png" />
+        <!-- TODO: add coamps model -->
     </Grid>
 
 </ContentPage>

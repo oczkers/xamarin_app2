@@ -6,6 +6,7 @@
     
     <StackLayout>
         <Label Text="pustka" />
+        <!-- TODO: select cities, model switch -->
     </StackLayout>
     
 </ContentPage>

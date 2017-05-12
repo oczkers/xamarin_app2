@@ -27,18 +27,25 @@ namespace Meteo24
 
             menu.ItemsSource = new string[]  // TODO: dynamic list created by user
             {
-                "Białystok",
                 "Warszawa",
                 "Kraków",
+                "Łódź",
+                "Wrocław",
+                "Poznań",
+                "Gdańsk",
+                "Szczecin",
+                "Bydgoszcz",
+                "Lublin",
+                "Katowice"
             };
             menu_footer.ItemsSource = new string[]
             {
                 "Legenda",
                 "Licencje",
             };
-            menu.SelectedItem = "Warszawa";
+            menu_footer.HeightRequest = menu_footer.RowHeight * 2 + 1;  // +1 disables scolling
 
-            Refresh();
+            menu.SelectedItem = "Warszawa";
         }
 
         private async void Refresh()
@@ -49,7 +56,7 @@ namespace Meteo24
             {
                 image.Source = await core.LoadImage(row, col);
             }
-            catch (Exception ex)
+            catch  // (Exception ex)
             {
                 //debug.Text = ex.Message;
                 debug.Text = "Błąd połączenia z serwerem meteo.pl";
@@ -79,10 +86,6 @@ namespace Meteo24
             // TODO: drop this switch, object based
             switch (e.SelectedItem.ToString())
             {
-                case "Białystok":
-                    row = 379;
-                    col = 285;
-                    break;
                 case "Warszawa":
                     row = 406;
                     col = 250;
@@ -91,6 +94,44 @@ namespace Meteo24
                     row = 466;
                     col = 232;
                     break;
+                case "Łódź":
+                    row = 418;
+                    col = 223;
+                    break;
+                case "Wrocław":
+                    row = 436;
+                    col = 181;
+                    break;
+                case "Poznań":
+                    row = 400;
+                    col = 180;
+                    break;
+                case "Gdańsk":
+                    row = 346;
+                    col = 210;
+                    break;
+                case "Szczecin":
+                    row = 370;
+                    col = 142;
+                    break;
+                case "Bydgoszcz":
+                    row = 381;
+                    col = 199;
+                    break;
+                case "Lublin":
+                    row = 432;
+                    col = 277;
+                    break;
+                case "Katowice":
+                    row = 461;
+                    col = 215;
+                    break;
+                /*
+                case "Białystok":
+                    row = 379;
+                    col = 285;
+                    break;
+                */
             }
             debug.Text = String.Format("row: {0}\n col: {1}", row, col);
             Refresh();

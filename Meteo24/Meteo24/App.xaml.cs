@@ -15,6 +15,7 @@ namespace Meteo24
         {
             InitializeComponent();
 
+            // TODO: first-run simple content page asking to select cities (gps, warsaw, cracov etc.)
             MainPage = new NavigationPage(new Meteo24.MainPage());
         }
 
