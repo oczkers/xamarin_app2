@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Meteo24.views.legend"
+             Title="Legenda">
+
+    <Grid>
+        <Image Source="http://www.meteo.pl/um/metco/leg_um_pl_cbase_256.png" />
+    </Grid>
+
+</ContentPage>
