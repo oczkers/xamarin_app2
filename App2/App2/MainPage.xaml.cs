@@ -44,22 +44,26 @@ namespace App2
         {
             image.Source = null;
             activity.IsRunning = true;
-            string rc = await core.LoadImage(row, col);
-            image.Source = rc;
-            debug.Text = rc;
+            try
+            {
+                image.Source = await core.LoadImage(row, col);
+            }
+            catch (Exception ex)
+            {
+                //debug.Text = ex.Message;
+                debug.Text = "Błąd połączenia z serwerem meteo.pl";
+            }
             activity.IsRunning = false;
         }
 
         private async void SettingsClicked(object sender, EventArgs e)
         {
             await Detail.Navigation.PushAsync(new views.settings());
-            IsPresented = false;  // just to make sure
         }
 
         private async void LicensesClicked(object sender, EventArgs e)
         {
             await Detail.Navigation.PushAsync(new views.licenses());
-            //IsPresented = false;  // just to make sure
         }
 
         private void RefreshClicked(object sender, EventArgs e)
@@ -89,8 +93,6 @@ namespace App2
             }
             debug.Text = String.Format("row: {0}\n col: {1}", row, col);
             Refresh();
-            //image.Source = core.LoadImage(row, col);
-            //Detail = new NavigationPage()
         }
 
         private async void MenuFooterItemTapped(object sender, ItemTappedEventArgs e)
