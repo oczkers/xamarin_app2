@@ -24,11 +24,15 @@
 
     <MasterDetailPage.Detail>
         <ContentPage>
-            <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
-                <Image x:Name="image" />
-                <Label x:Name="debug" />
-                <ActivityIndicator x:Name="activity" />
-            </StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Image x:Name="image" Grid.Row="0" />
+                <ActivityIndicator x:Name="activity" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center"/>
+                <Label x:Name="debug" Grid.Row="1" />
+            </Grid>
         </ContentPage>
     </MasterDetailPage.Detail>
 
