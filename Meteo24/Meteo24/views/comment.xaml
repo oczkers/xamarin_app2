@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Meteo24.views.comment"
+             Title="Komentarz synoptyka">
+
+    <StackLayout>
+        <Label Text="Nareszcie minęły chłodne, a miejscami nawet śnieżne dni zimnych ogrodników – jest to w zasadzie jedyny, powtarzający się regularnie rok w rok charakterystyczny bieg pogody. Okres majowego ochłodzenia wynika z napływu z północy czy północnego wschodu arktycznych mas powietrza, takie napływy występują też w marcu i kwietniu, ale majowy łączy się z ruszeniem wiosennej wegetacji i dłuższe przymrozki powodować mogą istotne szkody w uprawach. Widać jednak, że najbliższy tydzień przyniesie nam pogodę pełnej wiosny i natura szybko nadrobi straty.
+Rzut oka na mapy temperatury podłoża pokazuje, że jeszcze tej nocy przymrozki obejmowały Łotwę i północną Białoruś i oczywiście Rosję (ten niewielki fragment prezentowany na naszych mapach), kolejnej nocy będą tylko na NE od rejonu Pskowa i południa Finlandii, zaś w zimną Zośkę wycofają się nad Karelię i północną Finlandię. Podobnie na NE postępuje dzienne maksimum temperatury. Bałtyk jednak dalej jest zimny – w południowej i centralnej części 8-7 stopni, w Zatoce Botnickiej 4-2.
+
+Rozwijający się wyż znad Morza Barentsa i północnej Skandynawii sięga klinem chłodnego powietrza nad Finlandię i Estonię, w najbliższych dniach będzie się znacznie wzmacniał nad NW częścią Rosji i przez Białoruś i Polskę będzie się łączył z wyżem znad Bawarii. Zanim to nastąpi (w poniedziałek) to południem od Polski, przez Węgry i Słowację nad Ukrainę przetoczy się niewielki mezoskalowy niż z pozostałością frontu. Tam większe zachmurzenie warstwowe sięgające też nad południe kraju, wycofa się dopiero jutro znad Podkarpacia i Bieszczad. Ogonek tego frontu sięga nad Czechy i wschodnie Niemcy, wchodzić będzie jutro nad Dolny Śląsk, Ziemię Lubuską i Szczecińską – tak więc w tych obszarach zanikającego frontu pojawiać się mogą w ciągu niedzielnego dnia burze, układające się nawet w pasmo z północy na południe, dobrze widoczne na mapie opadów. Na pozostałym obszarze zmienne, cumulusowe zachmurzenie o wyraźny rytmie dobowym, bez opadów i z temperaturą dochodzącą i utrzymującą się na poziomie 20-22 stopni – czyli optimum.
+
+Maciej Ostrowski
+
+13 maja 2017, 08:15" />
+    </StackLayout>
+    
+</ContentPage>

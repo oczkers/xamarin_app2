@@ -31,7 +31,7 @@
                     <RowDefinition Height="*" />
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
-                <Label Text="Start prognozy: 2017.05.12 12:00 UTC" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center" />
+                <Label Text="Start prognozy: 2017.05.12 12:00 UTC" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center" /> <!-- TODO: display as small alert && date of last download -->
                 <Image x:Name="image" Grid.Row="1" />
                 <ActivityIndicator x:Name="activity" Grid.Row="1" VerticalOptions="Center" HorizontalOptions="Center"/>
                 <Label x:Name="debug" Grid.Row="2" />

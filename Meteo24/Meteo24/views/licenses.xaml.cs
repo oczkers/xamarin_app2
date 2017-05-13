@@ -15,7 +15,7 @@ namespace Meteo24.views
             InitializeComponent();
 
             var tapGestureMeteo = new TapGestureRecognizer();
-            tapGestureMeteo.Tapped += (s, e) =>
+            tapGestureMeteo.Tapped += (sender, e) =>
             {
                 Device.OpenUri(new System.Uri("http://meteo.pl"));
             };
@@ -33,7 +33,7 @@ namespace Meteo24.views
             */
 
             var tapGestureGithub = new TapGestureRecognizer();
-            tapGestureGithub.Tapped += (s, e) =>
+            tapGestureGithub.Tapped += (sender, e) =>
             {
                 Device.OpenUri(new System.Uri("https://github.com/oczkers/xamarin_meteo24"));
             };

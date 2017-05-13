@@ -40,17 +40,18 @@ namespace Meteo24
             };
             menu_footer.ItemsSource = new string[]
             {
+                "Komentarz",
                 "Legenda",
                 "Licencje",
             };
-            menu_footer.HeightRequest = menu_footer.RowHeight * 2 + 1;  // +1 disables scolling
+            menu_footer.HeightRequest = menu_footer.RowHeight * 3 + 1;  // +1 disables scolling
 
             menu.SelectedItem = "Warszawa";
         }
 
         private async void Refresh()
         {
-            image.Source = null;
+            image.Source = null;  // TODO: save last link for every city.
             activity.IsRunning = true;
             try
             {
@@ -141,6 +142,9 @@ namespace Meteo24
         {
             switch (e.Item.ToString())
             {
+                case "Komentarz":
+                    await Detail.Navigation.PushAsync(new views.comment());
+                    break;
                 case "Legenda":
                     await Detail.Navigation.PushAsync(new views.legend());
                     break;
