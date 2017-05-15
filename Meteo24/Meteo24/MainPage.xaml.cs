@@ -1,5 +1,5 @@
 ﻿using System;  // String
-//using System.Collections.Generic;
+using System.Collections.Generic;
 //using System.Linq;
 //using System.Text;
 //using System.Threading.Tasks;
@@ -16,6 +16,22 @@ namespace Meteo24
         int row = 406;
         int col = 250;
 
+        // TODO: move menu to separate view
+        Dictionary<string, List<int>> menu_items = new Dictionary<string, List<int>>
+            {
+                { "Warszawa", new List<int>{406, 250} },
+                { "Kraków", new List<int>{466, 232} },
+                { "Łódź", new List<int>{418, 223} },
+                { "Wrocław", new List<int>{436, 181} },
+                { "Poznań", new List<int>{400, 180} },
+                { "Gdańsk", new List<int>{346, 210} },
+                { "Szczecin", new List<int>{370, 142} },
+                { "Bydgoszcz", new List<int>{381, 199} },
+                { "Lublin", new List<int>{432, 277} },
+                { "Katowice", new List<int>{461, 215} },
+                // { "Białystok", new List<int>{379, 285} },
+            };
+
         public MainPage()
         {
             InitializeComponent();
@@ -25,22 +41,10 @@ namespace Meteo24
             menu.ItemSelected += MenuItemSelected;
             menu_footer.ItemTapped += MenuFooterItemTapped;
 
-            menu.ItemsSource = new string[]  // TODO: dynamic list created by user
-            {
-                "Warszawa",
-                "Kraków",
-                "Łódź",
-                "Wrocław",
-                "Poznań",
-                "Gdańsk",
-                "Szczecin",
-                "Bydgoszcz",
-                "Lublin",
-                "Katowice"
-            };
+            menu.ItemsSource = menu_items.Keys;
             menu_footer.ItemsSource = new string[]
             {
-                "Komentarz",
+                "Komentarz",  // TODO: comment as a selectable item instead of tap
                 "Legenda",
                 "Licencje",
             };
@@ -85,55 +89,8 @@ namespace Meteo24
         {
             IsPresented = false;  // hide master page
             // TODO: drop this switch, object based
-            switch (e.SelectedItem.ToString())
-            {
-                case "Warszawa":
-                    row = 406;
-                    col = 250;
-                    break;
-                case "Kraków":
-                    row = 466;
-                    col = 232;
-                    break;
-                case "Łódź":
-                    row = 418;
-                    col = 223;
-                    break;
-                case "Wrocław":
-                    row = 436;
-                    col = 181;
-                    break;
-                case "Poznań":
-                    row = 400;
-                    col = 180;
-                    break;
-                case "Gdańsk":
-                    row = 346;
-                    col = 210;
-                    break;
-                case "Szczecin":
-                    row = 370;
-                    col = 142;
-                    break;
-                case "Bydgoszcz":
-                    row = 381;
-                    col = 199;
-                    break;
-                case "Lublin":
-                    row = 432;
-                    col = 277;
-                    break;
-                case "Katowice":
-                    row = 461;
-                    col = 215;
-                    break;
-                /*
-                case "Białystok":
-                    row = 379;
-                    col = 285;
-                    break;
-                */
-            }
+            row = menu_items[e.SelectedItem.ToString()][0];
+            col = menu_items[e.SelectedItem.ToString()][1];
             debug.Text = String.Format("row: {0}\n col: {1}", row, col);
             Refresh();
         }
