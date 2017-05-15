@@ -88,7 +88,6 @@ namespace Meteo24
         private void MenuItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             IsPresented = false;  // hide master page
-            // TODO: drop this switch, object based
             row = menu_items[e.SelectedItem.ToString()][0];
             col = menu_items[e.SelectedItem.ToString()][1];
             debug.Text = String.Format("row: {0}\n col: {1}", row, col);
