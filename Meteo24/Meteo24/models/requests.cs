@@ -9,7 +9,7 @@ using System.Net.Http;
 namespace Meteo24.models
 {
     class requests : HttpClient
-    {        
+    {
         public requests()
         {
             this.DefaultRequestHeaders.Add("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8");

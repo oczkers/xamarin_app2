@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
-  <uses-sdk android:minSdkVersion="15" />
-  <application android:label="Meteo24.Android" android:theme="@style/MainTheme"></application>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.companyname.meteo24" android:installLocation="auto">
+	<uses-sdk android:minSdkVersion="16" android:targetSdkVersion="29" />
+	<application android:label="Meteo24.Android" android:icon="@drawable/icon"></application>
+	<uses-permission android:name="android.permission.INTERNET" />
 </manifest>

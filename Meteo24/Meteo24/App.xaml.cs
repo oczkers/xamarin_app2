@@ -1,12 +1,7 @@
-﻿//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Text;
+﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-
-[assembly: XamlCompilation(XamlCompilationOptions.Compile)]  // compile xaml views on build instead of run-time
 namespace Meteo24
 {
     public partial class App : Application

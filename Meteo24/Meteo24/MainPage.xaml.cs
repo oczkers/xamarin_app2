@@ -61,7 +61,7 @@ namespace Meteo24
             {
                 image.Source = await core.LoadImage(row, col);
             }
-            catch  // (Exception ex)
+            catch  // catch(Exception ex)
             {
                 //debug.Text = ex.Message;
                 debug.Text = "Błąd połączenia z serwerem meteo.pl";
